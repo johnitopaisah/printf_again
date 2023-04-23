@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i, s_len, count = 0;
 	char *s;
+	int num;
 
 	va_start(args, format);
 	for (i = 0; format[i] != '\0'; i++)
@@ -43,6 +44,11 @@ int _printf(const char *format, ...)
 						s = "";
 					s_len = print_str(s);
 					count += s_len;
+					break;
+				case 'd':
+				case 'i':
+					num = va_arg(args, int);
+					count += print_integer(num);
 					break;
 			}
 		}
