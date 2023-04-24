@@ -1,12 +1,13 @@
-#ifndef MAIN_H
-#define MAIN_H
+#include "main.h"
+#include <unistd.h>
 
-int _printf(const char *format, ...);
-
-int _strlen(char *str);
-int _write(char c);
-int print_str(char *str);
-void escapes(int e);
-int print_integer(int num);
-
-#endif /* MAIN_H */
+/**
+ * _write - a function that writes a character to the standard output.
+ * @c: the character to write to standard output.
+ *
+ * Return: the decimal equivalent of c as per ASCII code.
+ */
+int _write(char c)
+{
+	return (write(1, &c, 1));
+}
